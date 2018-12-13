@@ -1,0 +1,4 @@
+C:\Users\mle\Desktop\INFO\Pena\LABOS\008\header\affichage.h:6:23: fatal error: cstdlib: No such file or directory
+     #include <cstdlib>
+                       ^
+compilation terminated.
