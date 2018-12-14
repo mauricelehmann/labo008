@@ -1,0 +1,19 @@
+------------
+TODO LIST
+------------
+
+Partie saisie : (OK)
+    - Fonction boucle de saisie ( dans main ) -> OK
+    - Fonction check des inputs ( dans reglesDuJeu ) -> OK
+        - sois : "l, r, u , d" + un nombre ( valide sur le tablier )
+        - sois : "h" pour avoir les solutions des coups possibles
+        - sois : "q" pour arrêter
+
+Partie affichage (affichage.cpp) : (OK)
+    -Initialiser le tablier ( ok )
+    -Afficher le tablier ( ok )
+
+Partie regle du jeu :
+    - Fonction de check si un mouvement est possible -> (mahé)
+    - Fonction de mise à jour du tableau selon un mouvement ->(wènes)
+    - Fonction de calcule des coups possibles -> (mahé)
