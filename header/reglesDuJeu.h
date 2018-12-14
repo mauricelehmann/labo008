@@ -6,6 +6,7 @@
     #include <iostream>
     #include <string>
     #include <limits>
+    #include <sstream>
     using namespace std;
     //Prototypes
     bool entreeMouvement(string& mouvement);

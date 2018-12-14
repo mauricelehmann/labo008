@@ -5,21 +5,27 @@ bool entreeMouvement(string& mouvement){
 
     char direction;
     unsigned int position;
-    bool entreeValide = true;
+    const string MSG_ERREUR = "Saisie non-valide!";
 
-    do{
-        cout << "Entrez un mouvement a effectuer : (numero de la case + 'u','d','r','l') :";
-        cin >> position >> direction ;
-        if(cin.fail()){
-            //On vide le buffer
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Mouvement non-valide!" << endl;
-            return false;
-        }else{
-            entreeValide = false;
-        }
-    }while(entreeValide);
+    cout << "Entrez un mouvement a effectuer : (numero de la case + 'u','d','r','l') :" << endl;
+    cout << "Ou entrez 'h' pour de l aide ou 'q' pour arreter" << endl;
+
+    if(!(cin>>mouvement)){
+        cout << MSG_ERREUR <<endl;
+        return false;
+    }
+    //On check si il s'agit d'une "commande spéciale" et non un déplacement
+    if(mouvement == "h" || mouvement == "q"){
+        return false;
+    }
+    //On check en premier la taille de la commande déplacement
+    if(mouvement.size() != 3){
+        cout << MSG_ERREUR << endl;
+        return false;
+    }
+    //On récupère la position et la direction du déplacement eg: 13d -> 13 et d
+    stringstream(mouvement.substr(0,2)) >> position;
+    stringstream(mouvement.substr(2,3)) >> direction;
 
     //On regarde si la postion n'est pas hors bornes valides
     if(!(
@@ -30,15 +36,13 @@ bool entreeMouvement(string& mouvement){
         ((position > 72) && (position < 76))
     ))
     {
-        cout << "position non-valide!"<<endl;
+        cout << "Position non-valide!" <<endl;
         return false;
     }
     //On check si la direction est correct
     if(direction != 'u' && direction != 'd' && direction != 'l' && direction != 'r'){
-        cout <<"Direction non valide!"<<endl;
+        cout << "Direction non valide!" << endl;
         return false;
     }
-
     return true;
-
 }
