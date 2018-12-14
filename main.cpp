@@ -9,27 +9,30 @@ int main(){
 
     //On initialise le tablier comme un tableau de 7x7 éléments
     Case tablier[TAILLE_TABLIER][TAILLE_TABLIER] ;
-    unsigned int billesRestantes = NB_BILLES;
+    unsigned int billesRestantes;
     bool continuer = true;
     string mouvement;
 
-    initialiserTablier(tablier,TAILLE_TABLIER);
+    initialiserTablier(tablier);
+    billesRestantes = NB_BILLES;
 
     do{
-        afficherTablier(tablier,TAILLE_TABLIER);
+        afficherTablier(tablier);
         //Tant que le mouvement entré n'est pas valide, on redemande et on affiche le tableau
         while(!entreeMouvement(mouvement)){
-            afficherTablier(tablier,TAILLE_TABLIER);
+            afficherTablier(tablier);
             if(mouvement == "q"){
                 //L'utlisateur veut arreter sa partie :
                 //Fonction qui affiche le score / qui demande de recommencé ?
+                afficherScore(billesRestantes, tablier);
+                //On arrête cette partie
+                continuer = false;
             }
             if(mouvement == "h"){
                 //L'utilisateur veut de l'aide :
                 //Fonction qui affiche le score / qui demande de recommencé ?
             }
         }
-
     }while(continuer);
 
     return EXIT_SUCCESS;

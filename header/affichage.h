@@ -7,7 +7,9 @@
     #include <string>
     using namespace std;
     //Prototypes
-    void afficherTablier(Case tablier[][TAILLE_TABLIER], const size_t& taille);
-    void initialiserTablier(Case tablier[][TAILLE_TABLIER], const size_t& taille);
+    void afficherTablier(Case tablier[][TAILLE_TABLIER]);
+    void initialiserTablier(Case tablier[][TAILLE_TABLIER]);
+    void afficherScore(const unsigned int& billesRestantes, Case tablier[][TAILLE_TABLIER]);
+
 
 #endif //AFFICHAGE_H
