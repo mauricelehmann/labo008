@@ -32,6 +32,17 @@ int main(){
                 //L'utilisateur veut de l'aide :
                 //Fonction qui affiche le score / qui demande de recommencé ?
             }
+            //On applique le mouvment entree sur le tablier:
+            //TODO -> Fonction qui modifie le tablier d'apres un mouvement donné
+            //Important : le mouvement entré est deja validé par entreeMouvement() !
+
+            if(billesRestantes == 1){
+                //Le joueur a finit la partie
+                afficherScore(billesRestantes, tablier);
+                continuer = false;
+            }
+            //TODO -> checker avec la fonction qui trouve les mouvement possible, si il y en a encore.
+            //si il y en a plus, on arrete la partie et on affiche le score
         }
     }while(continuer);
 
