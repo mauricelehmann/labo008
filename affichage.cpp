@@ -1,13 +1,26 @@
+/*
+ -----------------------------------------------------------------------------------
+ Laboratoire : 08
+ Fichier     : affichage.cpp
+ Auteur(s)   : Maurice Lehmann,Mahé Fuentes, Wènes Limem
+ Date        : 13.12.2018
+
+ But         : Fonctions d'affichage des données du jeu (tablier, score du joueur)
+
+ Compilateur : MinGW-g++
+ -----------------------------------------------------------------------------------
+*/
+
 #include "header/constantes.h"
 #include "header/affichage.h"
 
 void afficherTablier(Case tablier[][TAILLE_TABLIER]){
 
-    for(size_t i = 0; i < TAILLE_TABLIER; i++){
-        for(size_t j = 0; j < TAILLE_TABLIER; j++){
-            switch (tablier[i][j]) {
+    for(size_t ligne = 0; ligne < TAILLE_TABLIER; ligne++){
+        for(size_t colonne = 0; colonne < TAILLE_TABLIER; colonne++){
+            switch (tablier[ligne][colonne]) {
                 case Case::plein:
-                    cout << to_string(i+1) + to_string(j+1) + " ";
+                    cout << to_string(ligne+1) + to_string(colonne+1) + " ";
                     break;
                 case Case::vide:
                     cout << ".. ";
@@ -51,4 +64,8 @@ void afficherScore(const unsigned int& billesRestantes, Case tablier[][TAILLE_TA
         cout << "Vous pouvez faire mieux, il reste "<< billesRestantes <<" billes";
     }
     cout << endl;
+}
+
+void afficherMouvementsPossibles(const string& mouvementsPossibles){
+    cout << mouvementsPossibles << endl;
 }
